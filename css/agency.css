@@ -172,7 +172,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("img/robot/BridgeDeployment.JPG");
+  background-image: url("https://raw.githubusercontent.com/i-jey/PL2W7K/master/img/header-bg.JPG");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
