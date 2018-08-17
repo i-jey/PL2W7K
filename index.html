@@ -686,8 +686,14 @@
                   <img class="img-fluid d-block mx-auto" src="img/portfolio//software//blue-pill.jpg" alt="">
                   <p><b>STM32 Blue Pill</b></p>
                   <br><p>The compute power that ran PL2's brains was the <a href="https://wiki.stm32duino.com/index.php?title=Blue_Pill">STM32 Blue Pill microcontroller.</a> With several analog, PWM and digital pins, and a fast clock cycle, this board allowed us to integrate all the electrical components that we needed to without running out of pins.</p>
-                  <br><p><b>State Machine</b></p>
+                  <br><p><b>State Machine and Object Abstraction</b></p>
+                  <p>One of the key challenges to making the robot was creating a sensible and easy to follow logic flow. To do so, we created state diagrams and a virtual state machine that allowed us to track "where and what" the robot was doing at all times. This provided certainty to the motions the robot was doing, and allowed us to couple different mechanisms (such as basket raising, bridge lowering, claw mechanisms, etc.) to the motor control, making it easy to express what actions we wanted the robot to take. For example, in the control states, we may delegate states 10-19 as "a bridge dropping sequence". In each state, a different component of the maneuver would be executed (find the edge, stop the motors, back up, lower the bridge, wait, etc.)
+                    Using the state machine in conjunction with abstracting different modules on the robot to their own particular class allowed for the code to be kept clean, modular and easy to debug.
+                  </p>
+                  
+                  <p></p>
                   <br><p><b>Menu System</b></p>
+                  <p>Additionally, we also developed a menu system using the onboard Blue Pill memory, EEPROM, to allow us to quickly alter values and make rapid changes without having to resort to uploading code after every proposed change. This allowed us to toy with several key variables for different maneuvers (such as PID constants for tap efollowing, timing vlaues for different maneuvers, and speeds) in a way conducive to rapid testing.</p>
                   <button class="btn btn-primary" data-dismiss="modal" style="background-color: #038a23; border-color: #038a23" type="button">
                       <i class="fa fa-times"></i>
                       Close</button>
