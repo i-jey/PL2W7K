@@ -639,13 +639,15 @@
                   Our h-bridges consist of electrical switches (N-Type MOSFETS) controlled by a high-side gate driver IC chip which recieved PWM outputs from the Bluepill. 
                   Opposite pairs of MOSFETs were activated so current could flow through the motor in two directions allowing both forward and backwards travel. 
                   Each H-bridge was decoupled through capacitor along input and output voltage lines so that noise propagation was kept to a minimum to not influence other componants in the electrical system.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/elec/IRBeacon-1k.jpg">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio//elec/IRBeacon-10k.jpg">
                   <br><p><b>IR Detection Circuits</b></p>
                   <p>One of the obstacles of the course was decoding an infrared signal beacon. This beacon was placed just before the archway, and its signal would switch randomly between flashing at a frequency of 1kHz and 10kHz. If the robot passed through the archway when the signal was at 1kHz a platform beyond the archway would start rotating, breaking the tape the robot used to navigate the course. PL2 had two IR detection circuits that were used to differentiate the 1kHz and 10kHz signals. Both circuits were identical, with the exception of the filter explained below.
 
                     This analog circuit was a series of signal manipulators to decode the flashing of the beacon into a signal understood (i.e a digital high or low) by the Bluepill mirco-controller. The components of the circuit are as follows:
                     <ul>
                       <li><b>DC-Block</b>: The DC-Block was used to eliminated the stead 60Hz infra-red emitted from the standard household lights as a part of the competition enviroment.</li>
-                      <li><b>Amplification</b>: At a distance that was relevant to robot manuverability the signal would come across quite weak (int the milli-volts range) the amplificating was used to strengthen the incoming signal</li>
+                      <li><b>Amplification</b>: At a distance that was relevant to robot manuverability the signal would come across quite weak (in the milli-volts range) the amplificating was used to strengthen the incoming signal</li>
                       <li><b>Filter</b>: Since PL2 was required to differentiate 1kHz and 10kHz, the respective circuits were built to ignore the opposite frequency.</li>
                       <li><b>Analog to digital conversion and final amplification</b>: The final conversion is required to turn the detection of the appropriate signal into a digital high that the mirco-controller may interpret. The amplification is required in the event the non-fluctuating voltage is not large enough for the mirco-controller to read a digital high.</p></li>
                     </ul>
